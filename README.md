@@ -1,5 +1,5 @@
 ## Stackoverflow Micro App
-THis is a Single page project, loads the quetions from the Stackoverflow.
+This is a Single page project, loads the quetions from the Stackoverflow.
 On click of each quesiton it opens a Popup which have a Likk to open the Quesiton in New Tab
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
