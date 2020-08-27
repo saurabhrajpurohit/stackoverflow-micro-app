@@ -1,0 +1,55 @@
+/* Google Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+/*Custom CSS*/
+.App {
+  text-align: center;
+  background-color: #282c34;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.card {
+  color: #282c34;
+}
+
+.tags-div{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.chip {
+  padding: 5px 15px;
+  font-size: 14px;
+  line-height: 20px;
+  border-radius: 25px;
+  margin-right: 5px;
+  background-color: #007bff;
+  color: white;
+  margin-top: 5px;
+}
+
+.card-title {
+  text-align: left;
+}
+
+.question-details {
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.question-details > i {
+  font-size: 16px;
+  margin-right:5px;
+}
+
+.modal {
+  color: black;
+}
+
+.avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
