@@ -38,6 +38,7 @@ export default class MainApp extends React.Component<{},state > {
      * @param page Page Number
      */
     getQuestions(page: number) {
+        this.setState({ loading: true })
         getQuestion(page).then(response => {
             this.setState({
                 questions: [...this.state.questions, ...response.items],
@@ -52,7 +53,6 @@ export default class MainApp extends React.Component<{},state > {
     loadMore() {
         this.setState({
             page: this.state.page + 1,
-            loading: true
         }, () => {
             this.getQuestions(this.state.page);
         })
@@ -72,7 +72,7 @@ export default class MainApp extends React.Component<{},state > {
     render() {
         const { questions, loading, selectedQuestion } = this.state;
         return (
-            <div className="container">
+            <div className="container vh-100">
                 <div className="col-12 pt-5 mb-5">
                     <div className="row">
                         <div className="col-12">
@@ -92,6 +92,10 @@ export default class MainApp extends React.Component<{},state > {
                             ))}
                         </div>
                     </ScrollComponent>
+                </div>
+
+                <div hidden={!loading} className="col-12">
+                    <i className="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
                 </div>
 
                 <Dialog isOpen={this.state.questionDialog} title={selectedQuestion.title}>
