@@ -20,14 +20,16 @@ const ScrollComponent = (props: any) => {
     function trackScrolling() {
         const wrappedElement = document.getElementById(props.target);
         if (isBottom(wrappedElement) && !props.isLoading) {
-            props.onNext();
             document.removeEventListener("scroll", trackScrolling);
+            props.onNext();
         }
     };
 
     useEffect(() => {
-        document.addEventListener("scroll", trackScrolling);
-    });
+        if(!props.isLoading) {
+            document.addEventListener("scroll", trackScrolling);
+        }
+    }, [props.isLoading]);
 
     return (props.children);
 };

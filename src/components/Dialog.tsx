@@ -9,7 +9,7 @@ export default (props: any) => {
         if (props.isOpen) {
             document.getElementById("modal-open-btn")?.click();
         }
-    })
+    }, [props.isOpen])
 
     return (
         <>
